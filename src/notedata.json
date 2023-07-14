@@ -1,0 +1,81 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "sample-note - Leema",
+      "content": "This is a sample note added for testing purpose",
+      "priority": "Medium",
+      "category": "General",
+      "reminderDate": "2023-07-15T04:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "practice-exercise: typescript",
+      "content": "to add function to calculate final bill amount",
+      "priority": "high",
+      "category": "work"
+    },
+    {
+      "id": 3,
+      "title": "challenge: typescript",
+      "content": "to add function to fetch notes",
+      "priority": "high",
+      "category": "work"
+    },
+    {
+      "id": 4,
+      "title": "refactor practice exercise",
+      "content": "code needs to be well-indented",
+      "priority": "high",
+      "category": "work"
+    },
+    {
+      "id": 5,
+      "title": "refactor challenge",
+      "content": "make design responsive and add comments in code",
+      "priority": "high",
+      "category": "work"
+    },
+    {
+      "title": "hey",
+      "content": "hi",
+      "id": 6,
+      "priority": "high",
+      "category": "work"
+    },
+    {
+      "title": "meri Kahani",
+      "content": "Hi this is Younus , hope you remember me , my contact number is 94918752538, my mail id is  younussshaik5@gmail.com",
+      "id": 7,
+      "priority": "high",
+      "category": "work"
+    },
+    {
+      "title": "Leema",
+      "content": "first note",
+      "category": "Work",
+      "priority": "Low",
+      "reminderDate": "2023-07-13T04:00:00.000Z",
+      "id": 8,
+      "editing": false
+    },
+    {
+      "title": "Brendon",
+      "content": "second note",
+      "category": "Personal",
+      "priority": "Medium",
+      "reminderDate": "2023-07-13T04:00:00.000Z",
+      "id": 9,
+      "editing": false
+    },
+    {
+      "title": "Brendon",
+      "content": "trying ",
+      "category": "Personal",
+      "priority": "Medium",
+      "reminderDate": "2023-07-13T04:00:00.000Z",
+      "id": 10,
+      "editing": false
+    }
+  ]
+}

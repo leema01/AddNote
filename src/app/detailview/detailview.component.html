@@ -1,0 +1,72 @@
+<!--
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ note?.title }}</mat-card-title>
+    <mat-card-subtitle>{{ note?.reminderDate | date }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field *ngIf="isEditing">
+      <input matInput [(ngModel)]="note.title">
+    </mat-form-field>
+    <mat-form-field *ngIf="isEditing">
+      <textarea matInput [(ngModel)]="note.content"></textarea>
+    </mat-form-field>
+    <p class="card-text" *ngIf="!isEditing">{{ note.content }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary" (click)="onEditClick()">
+      {{ isEditing ? 'Save' : 'Edit' }}
+    </button>
+    <button mat-flat-button color="warn" (click)="onDeleteClick()">Delete</button>
+  </mat-card-actions>
+</mat-card>
+ -->
+ <mat-card>
+  <mat-card-header>
+    <mat-card-title *ngIf="isEditing">
+      <mat-form-field>
+        <input matInput [(ngModel)]="note.title" name="title" placeholder="Title" required>
+      </mat-form-field>
+    </mat-card-title>
+    <mat-card-title *ngIf="!isEditing">{{ note.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="isEditing">
+      <mat-form-field>
+        <input matInput [(ngModel)]="note.reminderDate" name="reminderDate" [matDatepicker]="picker" placeholder="Reminder Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="!isEditing">{{ note.reminderDate | date }}</mat-card-subtitle>
+  </mat-card-header>
+ 
+  <mat-card-content>
+    <mat-form-field *ngIf="isEditing">
+      <textarea matInput [(ngModel)]="note.content" name="content" placeholder="Content" required></textarea>
+    </mat-form-field>
+    <p class="card-text" *ngIf="!isEditing">{{ note.content }}</p>
+    <div>
+    <mat-form-field *ngIf="isEditing">
+      <mat-select [(ngModel)]="note.category" name="category" placeholder="Category">
+        <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+      </mat-select>
+
+    </mat-form-field>
+  </div>
+
+    <p *ngIf="!isEditing"><strong>Category: </strong>{{ note.category }}</p>
+ 
+    <mat-form-field *ngIf="isEditing">
+      <mat-select [(ngModel)]="note.priority" name="priority" placeholder="Priority">
+        <mat-option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p *ngIf="!isEditing"><strong>Priority: </strong>{{ note.priority }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-flat-button color="primary" (click)="onEditClick()">
+      {{ isEditing ? 'Save' : 'Edit' }}
+    </button>
+    <button mat-flat-button color="warn" (click)="onDeleteClick()">Delete</button>
+  </mat-card-actions>
+</mat-card>

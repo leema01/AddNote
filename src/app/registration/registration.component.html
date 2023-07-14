@@ -1,0 +1,174 @@
+<div class="container">
+  <form [formGroup]="RegForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Registration Information</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="First name" formControlName="firstName">
+              <mat-error *ngIf="RegForm.controls['firstName'].hasError('required')">
+                First name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Last name" formControlName="lastName">
+              <mat-error *ngIf="RegForm.controls['lastName'].hasError('required')">
+                Last name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Email" formControlName="email">
+              <mat-error *ngIf="RegForm.controls['email'].hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="RegForm.controls['email'].hasError('email')">
+                Please enter a valid email address
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Password" formControlName="password" type="password" value="P@ssw0rd123">
+              <mat-error *ngIf="RegForm.controls['password'].hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="RegForm.controls['password'].hasError('pattern')">
+                has to have small,big, and min 8 char
+            </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Confirm password" formControlName="confirmPassword" type="password" value="P@ssw0rd123">
+              <mat-error *ngIf="RegForm.controls['confirmPassword'].hasError('required')">
+                Confirm password is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="RegForm.controls['confirmPassword'].hasError('passwordMismatch')">
+                Passwords do not match
+              </mat-error>
+              <mat-error *ngIf="RegForm.controls['confirmPassword'].hasError('pattern')">
+                has to have small,big, and min 8 char
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <mat-radio-group aria-label="Select an option">
+            <span>Gender</span>
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Age" formControlName="age">
+              <mat-error *ngIf="RegForm.controls['age'].hasError('required')">
+                Age is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="RegForm.controls['age'].hasError('agekamhy')">
+                age is lesser than 16
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Phone" formControlName="phone">
+              <mat-error *ngIf="RegForm.controls['phone'].hasError('required')">
+                Phone number is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="RegForm.controls['phone'].hasError('pattern')">
+                Please enter a valid phone number
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <mat-hint>
+          address
+         </mat-hint>
+        <div class="row">
+          <mat-form-field class="full-width">
+            <mat-label>enter your street address</mat-label>
+            <input matInput placeholder="Address" required formControlName="streetAddress">
+            <mat-error *ngIf="RegForm.controls['streetAddress'].hasError('required')">
+              Address is <strong>required</strong></mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="enter city name" formControlName="city">
+              <mat-error *ngIf="RegForm.controls['city'].hasError('required')">
+                city name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="enter state name" formControlName="state">
+              <mat-error *ngIf="RegForm.controls['state'].hasError('required')">
+                state name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="enter yout area zip code"  required formControlName="zip">
+              <mat-error *ngIf="RegForm.controls['zip'].hasError('required')">
+                zip code is <strong>required!</strong>
+              </mat-error>
+              <mat-error *ngIf="RegForm.controls['zip'].hasError('zip_galat_hy')">
+                zip 5 se kamm hy
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-raised-button color="primary" type="submit" [disabled]="RegForm.invalid">Register</button> -->
+        <button mat-raised-button color="primary" type="submit">Register</button>
+        <button mat-raised-button color="accent" type="button" (click)="RegForm.reset()">Reset</button>
+
+      </mat-card-actions>
+
+    </mat-card>
+  </form>
+</div>
+
+<!--
+----------------------------------
+| [First name ]      | [Last name] |
+----------------------------------
+| [Email]                             |
+----------------------------------
+| [Password]         | [Confirm password] |
+----------------------------------
+| [Gender]                            |  here it has to be in radio buttons
+----------------------------------
+
+ | [Age]    |             | [Phone]    |
+----------------------------------
+adress
+|[street]                                |
+----------------------------------
+|[city]              |        [state]    |
+----------------------------------
+|[zip code]                           |
+----------------------------------
+|    [Register]  |     [submit]      |
+----------------------------------
+
+  -->

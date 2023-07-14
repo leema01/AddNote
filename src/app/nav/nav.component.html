@@ -1,0 +1,44 @@
+<mat-toolbar color="primary" class="color"  *ngIf="currentRoute !== '/noteview'">
+  <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="" class="logo">
+  <span>Google Keep</span>
+  <span class="spacer"></span>
+  
+  <button class="MyDIV"mat-icon-button routerLink="/home" routerLinkActive="active-link">
+   <mat-icon>home</mat-icon>
+   
+  </button>
+  
+
+  <button mat-icon-button routerLink="/reg" routerLinkActive="active-link">
+    <mat-icon>receipt</mat-icon>
+  </button>
+  <button (click)="getstatus()" mat-icon-button routerLink="/noteview" routerLinkActive="active-link">
+    <mat-icon>note</mat-icon>
+    <div  *ngIf=!statuscheck style="color: black;">
+      Please logIn first....
+    </div>
+  </button>
+
+  <button (click)="getstatus()" mat-icon-button routerLink="/noteadd" routerLinkActive="active-link">
+    <mat-icon>add_box</mat-icon>
+    <!-- <div  *ngIf=!statuscheck style="color: black;">
+      Please logIn first....
+    </div> -->
+  </button>
+
+  <form class="search-form">
+    <mat-form-field>
+      <input matInput (keyup)="onSearch($event)" placeholder="Search...">
+      <button mat-button matSuffix routerLink="/search">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+  <button mat-icon-button routerLink="/login" routerLinkActive="active-link" >
+    <mat-icon>login</mat-icon>
+  </button>
+  <button mat-icon-button routerLink="/logout" routerLinkActive="active-link" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<!-- <router-outlet></router-outlet> -->

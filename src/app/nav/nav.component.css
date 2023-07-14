@@ -1,0 +1,73 @@
+
+
+
+
+
+mat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 24px;
+}
+
+mat-toolbar span {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button.active-link {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.search-form {
+  margin-left: 12px;
+}
+
+.mat-form-field {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  height: 36px;
+  width: 240px;
+}
+
+.mat-form-field:hover, .mat-form-field:focus-within {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.mat-form-field > .mat-form-field-wrapper {
+  padding: 0 12px;
+}
+
+.mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex {
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix {
+  width: 100%;
+}
+
+.mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-suffix {
+  margin-left: -4px;
+}
+
+button.mat-icon-button {
+  color: #fff;
+}
+
+button.mat-icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* .color
+{
+  background-color: rgb(214, 214, 103);
+} */
+

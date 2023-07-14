@@ -1,0 +1,19 @@
+mat-expansion-panel {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+button {
+  margin-top: 16px;
+}
+
+.but{
+  display: flex;
+  justify-content: space-around;
+}

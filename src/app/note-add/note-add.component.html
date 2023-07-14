@@ -1,0 +1,39 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Add New Note</mat-panel-title>
+  </mat-expansion-panel-header>
+  <form #noteForm="ngForm" (ngSubmit)="onSubmit(noteForm)">
+    <mat-form-field>
+      <input matInput placeholder="Title" name="title" [(ngModel)]="note.title" required>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Content" name="content" [(ngModel)]="note.content" required></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select name="category" [(ngModel)]="note.category" required>
+        <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Priority</mat-label>
+      <mat-select name="priority" [(ngModel)]="note.priority" required>
+        <mat-option *ngFor="let priority of priorities" [value]="priority">
+          <mat-icon [svgIcon]="priorityIcons[priority]"></mat-icon>
+          {{priority}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Reminder Date" name="reminderDate"
+        [(ngModel)]="note.reminderDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div class="but">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!noteForm.valid">Add Note</button>
+      <button mat-raised-button color="accent" type="button" (click)="noteForm.reset()">Reset</button>
+    </div>
+  </form>
+</mat-expansion-panel>
+<br>

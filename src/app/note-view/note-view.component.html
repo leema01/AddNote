@@ -1,0 +1,28 @@
+ <app-nav (search)="onSearch($event)"></app-nav> 
+<!-- <app-search (search)="onSearch($event)"></app-search> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let n of filteredNote">
+      <mat-card (click)="onCardClick(n.id)">
+        <mat-card-header>
+          <mat-card-title>{{ n.title }}</mat-card-title>
+          <div class="priority-icon" [ngSwitch]="n.priority">
+            <mat-icon *ngSwitchCase="'Critical'" color="warn">gpp_maybe</mat-icon>
+            <mat-icon *ngSwitchCase="'high'" color="accent">arrow_circle_up</mat-icon>
+            <mat-icon *ngSwitchCase="'Medium'" color="primary">remove_circle_outline</mat-icon>
+            <mat-icon *ngSwitchCase="'Low'" color="primary">arrow_circle_down</mat-icon>
+          </div>
+          <mat-card-subtitle>{{ n.reminderDate }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ n.content }}</p>
+        </mat-card-content>
+        <mat-chip>{{ n.category}}</mat-chip>
+        <mat-card-actions>
+          <button mat-button (click)="onCardClick(n.id)">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
